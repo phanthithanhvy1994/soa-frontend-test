@@ -15,7 +15,7 @@ const SidebarNav = ({ headersMapping, onClose }: Props): JSX.Element => {
   return (
     <Box display={'flex'} flexDirection={'column'} width={1}>
       <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'} width={1} paddingX={2} paddingY={1}>
-        <Box display={'flex'} component='a' href='/' title='Titani' width={{ xs: 100, md: 120 }}>
+        <Box display={'flex'} component='a' href='/' title='Company name' width={{ xs: 100, md: 120 }}>
           <img
             src='images/box-logo.png'
             alt='logo'
