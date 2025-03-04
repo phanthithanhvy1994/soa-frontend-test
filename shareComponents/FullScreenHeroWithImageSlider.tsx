@@ -86,18 +86,18 @@ const FullScreenHeroWithImageSlider = ({
           transform: "translateX(-50%)",
         }}
       >
-        <Container>
+        <Container sx={{ position: "relative" }}>
           <Box
             sx={{
               position: "absolute",
               bottom: 20,
-              left: 0,
+              left: "50%",
               transform: "translateX(-50%)",
-              width: '50%',
               display: "flex",
-              gap: 20,
+              gap: 2, 
               padding: "0 16px",
               borderRadius: "8px",
+              maxWidth: "90vw", 
             }}
           >
             {/* Rewind Button */}
@@ -127,7 +127,6 @@ const FullScreenHeroWithImageSlider = ({
               }}
             >
               {isPlaying ? <Pause /> : <PlayArrow />}
-              {/* Chuyển đổi giữa Play và Pause */}
             </IconButton>
             {/* Fast Forward Button */}
             <IconButton
