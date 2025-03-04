@@ -93,6 +93,7 @@ const FullScreenHeroWithImageSlider = ({
               bottom: 20,
               left: 0,
               transform: "translateX(-50%)",
+              width: '50%',
               display: "flex",
               gap: 20,
               padding: "0 16px",

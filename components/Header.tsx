@@ -47,7 +47,6 @@ const Header = ({ bgcolor = 'transparent', headersMapping }: HeaderProps): JSX.E
   if (/\/blog\//.test(pathname)) {
     colorInvert = true
   }
-  console.log('isDesktop', !isDesktop)
   return (
     <>
       <div id='back-to-top-anchor' />

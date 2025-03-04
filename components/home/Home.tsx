@@ -21,7 +21,7 @@ const HomeComponent = () => {
   const { data } = useApplicationContext()
   return (
     <>
-      <FullScreenHeroWithImageSlider bgColor='alternate.main' />
+      <FullScreenHeroWithImageSlider/>
       <CaseGrid {...data.bloc_1} />
       <DynamicMap {...data.bloc_2} carte_point={data.carte_point} />
       <BusyCalendar {...data.bloc_2_2} />
