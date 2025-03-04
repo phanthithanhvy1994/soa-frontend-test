@@ -43,7 +43,7 @@ const Header = ({
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 0,
+    threshold: 80,
   });
 
   let colorInvert = pathname === "/news";
@@ -57,6 +57,7 @@ const Header = ({
         position="fixed"
         sx={{
           top: 0,
+          left: 0,
           zIndex: 1100,
           backgroundColor:
             !colorInvert || (colorInvert && trigger)

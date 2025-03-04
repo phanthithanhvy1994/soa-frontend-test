@@ -74,7 +74,7 @@ const FullScreenHeroWithImageSlider = ({
         muted
         loop
         playsInline
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        style={{ width: "100%", height: "100vh", objectFit: "cover" }}
       />
 
       {/* Menu Icons */}
