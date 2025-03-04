@@ -76,6 +76,15 @@ const getTheme = (mode: string, direction?: 'rtl'): Theme =>
                 backgroundColor: "#D12D1A", // Màu khi bấm giữ
                 transform: "scale(0.98)", // Hiệu ứng nhấn xuống
               },
+              "&.active": {
+                backgroundColor: "#FF5733",
+                color: '#FFFFFF',
+                border: '1px solid #FF5733'
+              },
+              "&.active:hover": {
+                backgroundColor: "#FFFFFF",
+                color: '#FF5733'
+              },
             },
           },
         },
