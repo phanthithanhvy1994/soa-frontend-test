@@ -178,7 +178,7 @@ a[href^='tel'] {
   text-decoration: none;
 }
 
-.header {
+header.header {
   background-color: rgba(86, 44, 44, 1) !important;
 }
 

@@ -202,29 +202,55 @@ const ResponsiveUI = ({ title, cases, carte_point }: MapProps) => {
                       ]}
                       icon={customIcon}
                       eventHandlers={{
-                        click: () => setActiveLocation(point), // Khi click vào marker, set active location
+                        click: (e) => {
+                          setActiveLocation(point); // Set vị trí đang mở popup
+                          if (mapRef.current) {
+                            mapRef.current.setView(e.latlng, 4, {
+                              animate: true,
+                            }); // Zoom vào marker
+                          }
+                          setTimeout(() => {
+                            const popupElement = document.querySelector(
+                              ".leaflet-popup-content"
+                            );
+                            if (popupElement) {
+                              popupElement.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center",
+                              }); 
+                            }
+                          }, 300);
+                        },
                       }}
                     >
                       {activeLocation?.name === point.name && (
                         <Popup>
-                          <Typography variant="h6">{point.name}</Typography>
-                          <img
-                            src="/images/location_image.jpg"
-                            alt="Map"
-                            style={{ width: "300px" }}
-                          />
-                          {Object.entries(point).map(([key, value]) => {
-                            if (key === "coordinates" || key === "position")
-                              return null;
-                            return (
-                              <Typography key={key} variant="body2">
-                                <strong>{key}:</strong>{" "}
-                                {Array.isArray(value)
-                                  ? value.join(", ")
-                                  : value}
-                              </Typography>
-                            );
-                          })}
+                          <Box
+                            sx={{
+                              maxWidth: "320px",
+                              maxHeight: "400px",
+                              overflowY: "auto",
+                            }}
+                          >
+                            <Typography variant="h6">{point.name}</Typography>
+                            <img
+                              src="/images/location_image.jpg"
+                              alt="Map"
+                              style={{ width: "100%", borderRadius: "8px" }}
+                            />
+                            {Object.entries(point).map(([key, value]) => {
+                              if (key === "coordinates" || key === "position")
+                                return null;
+                              return (
+                                <Typography key={key} variant="body2">
+                                  <strong>{key}:</strong>{" "}
+                                  {Array.isArray(value)
+                                    ? value.join(", ")
+                                    : value}
+                                </Typography>
+                              );
+                            })}
+                          </Box>
                         </Popup>
                       )}
                     </Marker>
