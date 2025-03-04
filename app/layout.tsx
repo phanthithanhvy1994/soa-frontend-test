@@ -1,4 +1,3 @@
-import { Logo } from '@/types/logo'
 import localFont from 'next/font/local'
 import './globals.css'
 
@@ -20,14 +19,6 @@ export const dynamic = 'force-dynamic'
 
 interface RootLayoutProps {
   children: React.ReactNode
-}
-
-export interface GlobalSettings {
-  Header: (Logo | null)[]
-  structuredDataMarkup: JSON
-  googleAnalytics?: string
-  isRTLlanguage: boolean
-  headersMapping: string[]
 }
 
 export default async function RootLayout({ children }: Readonly<RootLayoutProps>) {

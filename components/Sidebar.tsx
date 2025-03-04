@@ -1,5 +1,4 @@
 import SidebarNav from '@/components/SidebarNav'
-import { Logo } from '@/types/logo'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 

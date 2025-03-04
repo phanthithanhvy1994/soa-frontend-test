@@ -1,10 +1,5 @@
-import { GlobalSettings } from '@/app/layout'
-import { ENDPOINTS } from '@/constants/Endpoint'
-import { Page } from '@/types/navigation'
 import { format, parseISO } from 'date-fns'
 import type { Viewport } from 'next'
-import { redirect } from 'next/navigation'
-import { fetchData } from './ApiHelpers'
 
 export const normalizeSlashes = (url?: string) => {
   if (!url) return url
